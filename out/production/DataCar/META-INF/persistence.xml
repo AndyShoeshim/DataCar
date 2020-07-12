@@ -6,11 +6,18 @@
         <jta-data-source>jdbc/datacar</jta-data-source>
         <class>com.datacar.persistence.TestEntity</class>
         <properties>
-            <property name="eclipselink.logging.level" value="INFO" />
+
+         <!--   <property name="eclipselink.logging.level" value="INFO" />
             <property name="eclipselink.cache.shared.default"
                       value="true" />
             <property name="eclipselink.ddl-generation"
-                      value="create-tables" />
+                      value="create-tables" />-->
+
+            <property name="javax.persistence.schema-generation.database.action"
+                      value="create"/>
+            <property name="javax.persistence.schema-generation.create-source"
+                      value="metadata"/>
+
         </properties>
     </persistence-unit>
 </persistence>
