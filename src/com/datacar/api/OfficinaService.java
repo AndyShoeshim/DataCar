@@ -5,9 +5,7 @@ import com.datacar.model.Officina;
 import com.datacar.persistence.OfficinaRepository;
 
 import javax.ejb.EJB;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -25,5 +23,11 @@ public class OfficinaService {
     }
 
 
-    //TODO update Officina
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/{p_iva}")
+    public Response updateOfficina(@PathParam("p_iva") String p_iva, Officina officina){
+        officinaRepository.updateOfficina(p_iva,officina);
+        return Response.status(Response.Status.ACCEPTED).build();
+    }
 }

@@ -5,7 +5,9 @@ import com.datacar.model.Officina;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NamedQuery;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 
 @LocalBean
@@ -20,8 +22,22 @@ public class OfficinaRepository {
         em.flush();
     }
 
-    public void updateOfficina(Officina officina){
-        em.merge(new OfficinaEntity(officina));
-        em.flush();
+
+    public OfficinaEntity findOfficinaByPiva(String p_iva){
+        List<OfficinaEntity> officinaFound = em.createNamedQuery("Officina.findOfficinaByPiva").setParameter("p_iva",p_iva).getResultList();
+        return officinaFound.get(0);
     }
+
+    public void updateOfficina(String p_iva, Officina officina){
+        OfficinaEntity updatedOfficina = findOfficinaByPiva(p_iva);
+        updatedOfficina.setEmail(officina.getEmail());
+        updatedOfficina.setIndirizzo(officina.getIndirizzo());
+        updatedOfficina.setNum_telefono(officina.getNum_telefono());
+        updatedOfficina.setPassword(officina.getPassword());
+        updatedOfficina.setP_iva(officina.getP_iva());
+        updatedOfficina.setRag_sociale(officina.getRag_sociale());
+        em.merge(updatedOfficina);
+    }
+
+
 }
