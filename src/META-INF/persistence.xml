@@ -4,21 +4,13 @@
                       transaction-type="JTA">
         <!-- <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
         <jta-data-source>jdbc/datacar</jta-data-source>
-        <class>com.datacar.persistence.TestEntity</class>
+        <class>com.datacar.persistence.TestEntity</class>s
         <properties>
-
-         <!--
             <property name="eclipselink.logging.level" value="INFO" />
             <property name="eclipselink.cache.shared.default"
                       value="true" />
-            <property name="eclipselink.ddl-generation"
-                      value="create-tables" />-->
-
-            <property name="javax.persistence.schema-generation.database.action"
-                      value="create"/>
-            <property name="javax.persistence.schema-generation.create-source"
-                      value="metadata"/>
-
+            <property name="eclipselink.ddl-generation" value="create-tables"/>
+            <property name="eclipselink.ddl-generation.output-mode" value="database"/>
         </properties>
     </persistence-unit>
 </persistence>
