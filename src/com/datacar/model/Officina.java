@@ -22,6 +22,9 @@ public class Officina {
     @JsonbProperty
     private String indirizzo;
 
+    public Officina(){
+    }
+
     public Officina(String rag_sociale, String p_iva, String email, String password, String num_telefono, String indirizzo) {
         this.rag_sociale = rag_sociale;
         this.p_iva = p_iva;
