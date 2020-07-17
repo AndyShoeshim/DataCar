@@ -27,7 +27,7 @@ public class OfficinaEntity {
     private String password;
 
     @Column(nullable = false)
-    private String num_telefono;
+    private int num_telefono;
 
     @Column(nullable = false)
     private String indirizzo;
@@ -84,11 +84,11 @@ public class OfficinaEntity {
         this.password = password;
     }
 
-    public String getNum_telefono() {
+    public int getNum_telefono() {
         return num_telefono;
     }
 
-    public void setNum_telefono(String num_telefono) {
+    public void setNum_telefono(int num_telefono) {
         this.num_telefono = num_telefono;
     }
 

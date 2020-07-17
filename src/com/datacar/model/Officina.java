@@ -17,7 +17,7 @@ public class Officina {
     private String password;
 
     @JsonbProperty
-    private String num_telefono;
+    private int num_telefono;
 
     @JsonbProperty
     private String indirizzo;
@@ -25,7 +25,7 @@ public class Officina {
     public Officina(){
     }
 
-    public Officina(String rag_sociale, String p_iva, String email, String password, String num_telefono, String indirizzo) {
+    public Officina(String rag_sociale, String p_iva, String email, String password, int num_telefono, String indirizzo) {
         this.rag_sociale = rag_sociale;
         this.p_iva = p_iva;
         this.email = email;
@@ -50,7 +50,7 @@ public class Officina {
         return indirizzo;
     }
 
-    public String getNum_telefono() {
+    public int getNum_telefono() {
         return num_telefono;
     }
 
