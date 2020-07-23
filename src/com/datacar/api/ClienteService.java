@@ -4,6 +4,8 @@ package com.datacar.api;
 import com.datacar.model.Cliente;
 import com.datacar.persistence.ClienteEntity;
 import com.datacar.persistence.ClienteRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ejb.EJB;
 import javax.ws.rs.*;
@@ -27,28 +29,43 @@ public class ClienteService {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{cod_fiscale}")
     public Response getClienteFromId(@PathParam("cod_fiscale") String cod_fiscale){
-        return Response.status(Response.Status.OK).entity(clienteRepository.findClienteByCodFiscale(cod_fiscale)).build();
+        try {
+            return Response.status(Response.Status.OK).entity(clienteRepository.findClienteByCodFiscale(cod_fiscale)).build();
+        } catch (Exception e){
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createCliente(Cliente cliente){
-        clienteRepository.createCliente(cliente);
-        return Response.status(Response.Status.OK).build();
+        try {
+            clienteRepository.createCliente(cliente);
+            return Response.status(Response.Status.OK).build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
+
     }
 
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("/{cod_fiscale}")
     public Response updateCliente(@PathParam("cod_fiscale") String cod_fiscale, Cliente cliente){
-        clienteRepository.updateCliente(cod_fiscale,cliente);
-        return Response.status(Response.Status.ACCEPTED).build();
+        boolean result = clienteRepository.updateCliente(cod_fiscale,cliente);
+        if(result)
+            return Response.status(Response.Status.ACCEPTED).build();
+        else
+            return Response.status(Response.Status.NOT_FOUND).build();
     }
 
     @DELETE
     @Path("/{cod_fiscale}")
     public Response deleteCliente(@PathParam("cod_fiscale") String cod_fiscale){
-        clienteRepository.deleteCliente(cod_fiscale);
-        return Response.status(Response.Status.ACCEPTED).build();
+        boolean result = clienteRepository.deleteCliente(cod_fiscale);
+        if(result)
+            return Response.status(Response.Status.ACCEPTED).build();
+        else
+            return Response.status(Response.Status.NOT_FOUND).build();
     }
 }

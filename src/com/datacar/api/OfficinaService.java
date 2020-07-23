@@ -18,8 +18,12 @@ public class OfficinaService {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response addOfficina(Officina officina){
-        officinaRepository.createOfficina(officina);
-        return Response.status(Response.Status.CREATED).build();
+        try {
+            officinaRepository.createOfficina(officina);
+            return Response.status(Response.Status.CREATED).build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
     }
 
 
@@ -27,7 +31,10 @@ public class OfficinaService {
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("/{p_iva}")
     public Response updateOfficina(@PathParam("p_iva") String p_iva, Officina officina){
-        officinaRepository.updateOfficina(p_iva,officina);
-        return Response.status(Response.Status.ACCEPTED).build();
+        boolean result = officinaRepository.updateOfficina(p_iva,officina);
+        if(result)
+            return Response.status(Response.Status.ACCEPTED).build();
+        else
+            return Response.status(Response.Status.NOT_FOUND).build();
     }
 }

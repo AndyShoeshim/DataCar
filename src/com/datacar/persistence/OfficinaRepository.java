@@ -28,8 +28,11 @@ public class OfficinaRepository {
         return officinaFound.get(0);
     }
 
-    public void updateOfficina(String p_iva, Officina officina){
+    public boolean updateOfficina(String p_iva, Officina officina){
         OfficinaEntity updatedOfficina = findOfficinaByPiva(p_iva);
+        if(updatedOfficina==null){
+            return false;
+        }
         updatedOfficina.setEmail(officina.getEmail());
         updatedOfficina.setIndirizzo(officina.getIndirizzo());
         updatedOfficina.setNum_telefono(officina.getNum_telefono());
@@ -37,6 +40,7 @@ public class OfficinaRepository {
         updatedOfficina.setP_iva(officina.getP_iva());
         updatedOfficina.setRag_sociale(officina.getRag_sociale());
         em.merge(updatedOfficina);
+        return true;
     }
 
 

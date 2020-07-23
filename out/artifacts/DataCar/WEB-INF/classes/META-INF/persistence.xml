@@ -4,7 +4,6 @@
                       transaction-type="JTA">
         <!-- <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
         <jta-data-source>jdbc/datacar</jta-data-source>
-        <class>com.datacar.persistence.TestEntity</class>s
         <properties>
             <property name="eclipselink.logging.level" value="INFO" />
             <property name="eclipselink.cache.shared.default"

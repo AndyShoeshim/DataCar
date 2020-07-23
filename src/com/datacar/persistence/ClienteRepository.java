@@ -26,8 +26,13 @@ public class ClienteRepository {
         return clientFound.get(0);
     }
 
-    public void updateCliente(String cod_fiscale, Cliente clienteUpdated){
+    public boolean updateCliente(String cod_fiscale, Cliente clienteUpdated){
         ClienteEntity clienteOld = findClienteByCodFiscale(cod_fiscale);
+
+        if(clienteOld==null){
+            return false;
+        }
+
         clienteOld.setNome(clienteUpdated.getNome());
         clienteOld.setCognome(clienteUpdated.getCognome());
         clienteOld.setCitta(clienteUpdated.getCitta());
@@ -42,6 +47,7 @@ public class ClienteRepository {
         }
 
         em.merge(clienteOld);
+        return true;
     }
 
     public List<ClienteEntity> getAllCliente(){
@@ -49,8 +55,12 @@ public class ClienteRepository {
         return clientFound;
     }
 
-    public void deleteCliente(String cod_fiscale){
+    public boolean deleteCliente(String cod_fiscale){
         ClienteEntity clienteToDelete = findClienteByCodFiscale(cod_fiscale);
+        if(clienteToDelete!=null){
+            return false;
+        }
         em.remove(clienteToDelete);
+        return true;
     }
 }
