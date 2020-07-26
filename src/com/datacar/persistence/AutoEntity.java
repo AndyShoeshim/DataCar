@@ -4,11 +4,11 @@ package com.datacar.persistence;
 import com.datacar.model.Auto;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "auto")
 @Table(name = "auto")
 @NamedQueries({
-        @NamedQuery(name = "Auto.findAutoByTarga", query = "select a.id from auto a where a.targa=:targa"),
         @NamedQuery(name = "Auto.getAutoById", query = "select a from auto a where a.id=:id")
 }
 )
@@ -36,8 +36,9 @@ public class AutoEntity {
     @Column(nullable = false)
     String cavalli;
 
-    @Column(nullable = false, unique = true)
-    String targa;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "id_auto", orphanRemoval = true)
+    private List<AutoClienteEntity> autoClienteEntities;
+
 
     public AutoEntity() {
     }
@@ -49,7 +50,6 @@ public class AutoEntity {
         this.cilindrata = auto.getCilindrata();
         this.carburante = auto.getCarburante();
         this.cavalli = auto.getCavalli();
-        this.targa = auto.getTarga();
     }
 
     public int getId() {
@@ -108,11 +108,4 @@ public class AutoEntity {
         this.cavalli = cavalli;
     }
 
-    public String getTarga() {
-        return targa;
-    }
-
-    public void setTarga(String targa) {
-        this.targa = targa;
-    }
 }

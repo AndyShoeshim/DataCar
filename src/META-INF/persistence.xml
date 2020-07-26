@@ -10,6 +10,9 @@
                       value="true" />
             <property name="eclipselink.ddl-generation" value="create-tables"/>
             <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+
+            <!--<property name="javax.persistence.schema-generation.create-source" value="metadata-then-script"/>-->
+            <!--<property name="javax.persistence.sql-load-script-source" value="META-INF/seed.sql"/>-->
         </properties>
     </persistence-unit>
 </persistence>

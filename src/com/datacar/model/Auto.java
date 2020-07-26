@@ -22,20 +22,17 @@ public class Auto {
     @JsonbProperty
     String cavalli;
 
-    @JsonbProperty
-    String targa;
 
     public Auto() {
     }
 
-    public Auto(String marca, String modello, String motore, String cilindrata, String carburante, String cavalli, String targa) {
+    public Auto(String marca, String modello, String motore, String cilindrata, String carburante, String cavalli) {
         this.marca = marca;
         this.modello = modello;
         this.motore = motore;
         this.cilindrata = cilindrata;
         this.carburante = carburante;
         this.cavalli = cavalli;
-        this.targa = targa;
     }
 
     public String getMarca() {
@@ -62,7 +59,4 @@ public class Auto {
         return cavalli;
     }
 
-    public String getTarga() {
-        return targa;
-    }
 }

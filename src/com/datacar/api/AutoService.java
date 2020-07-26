@@ -32,15 +32,4 @@ public class AutoService {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
     }
-
-
-    @GET
-    @Path("/{targa}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getAutoByTarga(@PathParam("targa") String targa){
-        if(targa!=null)
-            return Response.status(Response.Status.OK).entity(autoRepository.getAutoIdByTarga(targa)).build();
-        else
-            return Response.status(Response.Status.BAD_REQUEST).build();
-    }
 }

@@ -24,10 +24,10 @@ public class AutoRepository {
         em.flush();
     }
 
-    public int getAutoIdByTarga(String targa){
+   /* public int getAutoIdByTarga(String targa){
       Query queryExecuted = em.createNamedQuery("Auto.findAutoByTarga").setParameter("targa",targa);
       return (int) queryExecuted.getSingleResult();
-    }
+    }*/
 
     public AutoEntity getAutoById(int id){
         List<AutoEntity> autoEntities = em.createNamedQuery("Auto.getAutoById").setParameter("id", id).getResultList();

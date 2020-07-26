@@ -4,6 +4,7 @@ package com.datacar.persistence;
 import com.datacar.model.Cliente;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "cliente")
 @Table(name = "cliente")
@@ -15,7 +16,7 @@ public class ClienteEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    int id_cliente;
+    int id;
 
     @Column(nullable = false)
     String nome;
@@ -41,6 +42,10 @@ public class ClienteEntity {
     @Column(nullable = false)
     int telefono;
 
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "id_cliente", orphanRemoval = true)
+    private List<AutoClienteEntity> autoClienteList;
+
     @Column(nullable = true)
     String email;
 
@@ -59,12 +64,12 @@ public class ClienteEntity {
         this.email = cliente.getEmail();
     }
 
-    public int getId_cliente() {
-        return id_cliente;
+    public int getId() {
+        return id;
     }
 
-    public void setId_cliente(int id_cliente) {
-        this.id_cliente = id_cliente;
+    public void setId(int id_cliente) {
+        this.id = id_cliente;
     }
 
     public String getNome() {
@@ -137,5 +142,13 @@ public class ClienteEntity {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<AutoClienteEntity> getAutoClienteList() {
+        return autoClienteList;
+    }
+
+    public void setAutoClienteList(List<AutoClienteEntity> autoClienteList) {
+        this.autoClienteList = autoClienteList;
     }
 }
