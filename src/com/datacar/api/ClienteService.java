@@ -4,6 +4,7 @@ package com.datacar.api;
 import com.datacar.model.Cliente;
 import com.datacar.persistence.ClienteEntity;
 import com.datacar.persistence.ClienteRepository;
+import com.datacar.utility.ClienteEntityToDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,7 +23,8 @@ public class ClienteService {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllCliente(){
-        return Response.status(Response.Status.OK).entity(clienteRepository.getAllCliente()).build();
+        List<ClienteEntity> clienteEntities = clienteRepository.getAllCliente();
+        return Response.status(Response.Status.OK).entity(ClienteEntityToDto.getListClienteDTOfromListEntity(clienteEntities)).build();
     }
 
     @GET
@@ -30,7 +32,8 @@ public class ClienteService {
     @Path("/{cod_fiscale}")
     public Response getClienteFromId(@PathParam("cod_fiscale") String cod_fiscale){
         try {
-            return Response.status(Response.Status.OK).entity(clienteRepository.findClienteByCodFiscale(cod_fiscale)).build();
+            ClienteEntity clienteFound = clienteRepository.findClienteByCodFiscale(cod_fiscale);
+            return Response.status(Response.Status.OK).entity(ClienteEntityToDto.getClienteDTOfromEntity(clienteFound)).build();
         } catch (Exception e){
             return Response.status(Response.Status.NOT_FOUND).build();
         }

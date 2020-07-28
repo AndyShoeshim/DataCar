@@ -2,6 +2,8 @@ package com.datacar.persistence;
 
 
 import com.datacar.model.Auto;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -31,6 +33,7 @@ public class AutoRepository {
 
     public AutoEntity getAutoById(int id){
         List<AutoEntity> autoEntities = em.createNamedQuery("Auto.getAutoById").setParameter("id", id).getResultList();
+        System.out.println(autoEntities.get(0).getId());
         return autoEntities.get(0);
     }
 }

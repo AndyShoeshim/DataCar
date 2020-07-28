@@ -2,6 +2,8 @@ package com.datacar.persistence;
 
 
 import com.datacar.model.Auto;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
@@ -36,6 +38,7 @@ public class AutoEntity {
     @Column(nullable = false)
     String cavalli;
 
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "id_auto", orphanRemoval = true)
     private List<AutoClienteEntity> autoClienteEntities;
 
@@ -108,4 +111,11 @@ public class AutoEntity {
         this.cavalli = cavalli;
     }
 
+    public void setAutoClienteEntities(List<AutoClienteEntity> autoClienteEntities) {
+        this.autoClienteEntities = autoClienteEntities;
+    }
+
+    public List<AutoClienteEntity> getAutoClienteEntities() {
+        return autoClienteEntities;
+    }
 }

@@ -137,7 +137,7 @@ public class ClienteEntity {
     }
 
     public String getEmail() {
-        return email;
+            return email;
     }
 
     public void setEmail(String email) {
