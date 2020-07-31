@@ -1,6 +1,7 @@
-package com.datacar.persistence;
+package com.datacar.controller;
 
 import com.datacar.model.Officina;
+import com.datacar.persistence.OfficinaEntity;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;

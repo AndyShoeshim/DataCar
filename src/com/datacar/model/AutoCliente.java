@@ -11,11 +11,30 @@ public class AutoCliente {
     private String cod_fiscale;
 
     @JsonbProperty
-    private int auto_id;
+    String marca;
+
+    @JsonbProperty
+    String modello;
+
+    @JsonbProperty
+    String motore;
+
+    @JsonbProperty
+    String cilindrata;
+
+    @JsonbProperty
+    String carburante;
+
 
 
     public AutoCliente(){
     }
+
+  /*
+
+      @JsonbProperty
+       private int auto_id;
+
 
     public AutoCliente(String targa, String cod_fiscale, int auto_id) {
         this.targa = targa;
@@ -24,8 +43,25 @@ public class AutoCliente {
     }
 
     public void setAuto_id(int auto_id) {
-        this.auto_id = auto_id;
+//        this.auto_id = auto_id;
+//    }
+      public int getAuto_id() {
+//        return auto_id;
+//    }
+
+    */
+
+    public AutoCliente(String targa, String cod_fiscale, String marca, String modello, String motore, String cilindrata, String carburante) {
+        this.targa = targa;
+        this.cod_fiscale = cod_fiscale;
+        this.marca = marca;
+        this.modello = modello;
+        this.motore = motore;
+        this.cilindrata = cilindrata;
+        this.carburante = carburante;
     }
+
+
 
     public void setCod_fiscale(String cod_fiscale) {
         this.cod_fiscale = cod_fiscale;
@@ -33,6 +69,46 @@ public class AutoCliente {
 
     public void setTarga(String targa) {
         this.targa = targa;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getModello() {
+        return modello;
+    }
+
+    public void setModello(String modello) {
+        this.modello = modello;
+    }
+
+    public String getMotore() {
+        return motore;
+    }
+
+    public void setMotore(String motore) {
+        this.motore = motore;
+    }
+
+    public String getCilindrata() {
+        return cilindrata;
+    }
+
+    public void setCilindrata(String cilindrata) {
+        this.cilindrata = cilindrata;
+    }
+
+    public String getCarburante() {
+        return carburante;
+    }
+
+    public void setCarburante(String carburante) {
+        this.carburante = carburante;
     }
 
     public String getCod_fiscale() {
@@ -43,7 +119,4 @@ public class AutoCliente {
         return targa;
     }
 
-    public int getAuto_id() {
-        return auto_id;
-    }
 }

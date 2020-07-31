@@ -16,52 +16,51 @@ public class ClienteEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    int id;
+    private int id;
 
     @Column(nullable = false)
-    String nome;
+    private String nome;
 
     @Column(nullable = false)
-    String cognome;
+    private String cognome;
 
     @Column(nullable = false)
-    String citta;
+    private String citta;
 
     @Column(nullable = false)
-    String cap;
+    private String cap;
 
     @Column(nullable = false)
-    String indirizzo;
+    private String indirizzo;
 
     @Column(nullable = false)
-    String sesso;
+    private String sesso;
 
     @Column(nullable = false, unique = true)
-    String cod_fiscale;
+    private String cod_fiscale;
 
     @Column(nullable = false)
-    int telefono;
-
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "id_cliente", orphanRemoval = true)
-    private List<AutoClienteEntity> autoClienteList;
+    private int telefono;
 
     @Column(nullable = true)
     String email;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "id_cliente", orphanRemoval = true)
+    private List<AutoClienteEntity> autoClienteList;
+
     public ClienteEntity(){
     }
 
-    public ClienteEntity(Cliente cliente) {
-        this.nome = cliente.getNome();
-        this.cognome = cliente.getCognome();
-        this.citta = cliente.getCitta();
-        this.cap = cliente.getCap();
-        this.indirizzo = cliente.getIndirizzo();
-        this.sesso = cliente.getSesso();
-        this.cod_fiscale = cliente.getCod_fiscale();
-        this.telefono = cliente.getTelefono();
-        this.email = cliente.getEmail();
+    public ClienteEntity(String nome, String cognome, String citta, String cap, String indirizzo, String sesso, String cod_fiscale, int telefono, String email) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.citta = citta;
+        this.cap = cap;
+        this.indirizzo = indirizzo;
+        this.sesso = sesso;
+        this.cod_fiscale = cod_fiscale;
+        this.telefono = telefono;
+        this.email = email;
     }
 
     public int getId() {

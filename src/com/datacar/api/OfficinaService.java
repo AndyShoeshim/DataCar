@@ -2,7 +2,7 @@ package com.datacar.api;
 
 
 import com.datacar.model.Officina;
-import com.datacar.persistence.OfficinaRepository;
+import com.datacar.controller.OfficinaRepository;
 
 import javax.ejb.EJB;
 import javax.ws.rs.*;

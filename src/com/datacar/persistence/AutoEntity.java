@@ -11,6 +11,7 @@ import java.util.List;
 @Entity(name = "auto")
 @Table(name = "auto")
 @NamedQueries({
+        @NamedQuery(name = "Auto.getAutoByDesc" , query = "select a from auto a where a.marca=:marca and a.modello=:modello and a.cilindrata=:cilindrata and a.motore=:motore and a.carburante=:carburante"),
         @NamedQuery(name = "Auto.getAutoById", query = "select a from auto a where a.id=:id")
 }
 )
@@ -18,25 +19,25 @@ public class AutoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    int id;
+    private int id;
 
     @Column(nullable = false)
-    String marca;
+    private String marca;
 
     @Column(nullable = false)
-    String modello;
+    private String modello;
 
     @Column(nullable = false)
-    String motore;
+    private String motore;
 
     @Column(nullable = false)
-    String cilindrata;
+    private String cilindrata;
 
     @Column(nullable = false)
-    String carburante;
+    private String carburante;
 
     @Column(nullable = false)
-    String cavalli;
+    private String cavalli;
 
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "id_auto", orphanRemoval = true)
@@ -46,13 +47,13 @@ public class AutoEntity {
     public AutoEntity() {
     }
 
-    public AutoEntity(Auto auto) {
-        this.marca = auto.getMarca();
-        this.modello = auto.getModello();
-        this.motore = auto.getMotore();
-        this.cilindrata = auto.getCilindrata();
-        this.carburante = auto.getCarburante();
-        this.cavalli = auto.getCavalli();
+    public AutoEntity(String marca, String modello, String motore, String cilindrata, String carburante, String cavalli) {
+        this.marca = marca;
+        this.modello = modello;
+        this.motore = motore;
+        this.cilindrata = cilindrata;
+        this.carburante = carburante;
+        this.cavalli = cavalli;
     }
 
     public int getId() {

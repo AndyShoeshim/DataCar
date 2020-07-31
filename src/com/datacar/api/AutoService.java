@@ -2,7 +2,7 @@ package com.datacar.api;
 
 
 import com.datacar.model.Auto;
-import com.datacar.persistence.AutoRepository;
+import com.datacar.controller.AutoRepository;
 
 import javax.ejb.EJB;
 import javax.ws.rs.*;

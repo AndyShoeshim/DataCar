@@ -1,16 +1,17 @@
 package com.datacar.api;
 
 
+import com.datacar.controller.AutoClienteRepository;
+import com.datacar.controller.AutoRepository;
+import com.datacar.controller.ClienteRepository;
 import com.datacar.model.AutoCliente;
 import com.datacar.persistence.*;
 import com.datacar.utility.AutoEntityToDto;
-import com.datacar.utility.ClienteEntityToDto;
 
 import javax.ejb.EJB;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.ArrayList;
 import java.util.List;
 
 @Path("/cliente/auto")
@@ -27,16 +28,19 @@ public class AutoClienteService {
 
 
 
-    //TODO refactor the post req and the autocliente in order to pass the values of the auto and find the id
-
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response addAutoCliente(AutoCliente autoCliente){
         try {
             String targa = autoCliente.getTarga();
             ClienteEntity clienteEntity = clienteRepository.findClienteByCodFiscale(autoCliente.getCod_fiscale());
-            System.out.println(autoCliente.getAuto_id());
-            AutoEntity autoEntity = autoRepository.getAutoById(autoCliente.getAuto_id());
+            String marca = autoCliente.getMarca();
+            String modello = autoCliente.getModello();
+            String cilindrata = autoCliente.getCilindrata();
+            String motore = autoCliente.getMotore();
+            String carburante = autoCliente.getCarburante();
+//          AutoEntity autoEntity = autoRepository.getAutoById(autoCliente.getAuto_id());
+            AutoEntity autoEntity = autoRepository.getAutoByDesc(marca,modello,cilindrata,motore,carburante);
             System.out.println(autoEntity.getMarca());
             autoClienteRepository.createAutoCliente(targa, clienteEntity, autoEntity);
             return Response.status(Response.Status.OK).build();

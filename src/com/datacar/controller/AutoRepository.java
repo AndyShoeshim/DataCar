@@ -1,7 +1,9 @@
-package com.datacar.persistence;
+package com.datacar.controller;
 
 
 import com.datacar.model.Auto;
+import com.datacar.persistence.AutoEntity;
+import com.datacar.utility.AutoDtoToEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,14 +24,16 @@ public class AutoRepository {
 
 
     public void createAuto(Auto auto){
-        em.persist(new AutoEntity(auto));
+        em.persist(AutoDtoToEntity.autoEntityFromautoDto(auto));
         em.flush();
     }
 
-   /* public int getAutoIdByTarga(String targa){
-      Query queryExecuted = em.createNamedQuery("Auto.findAutoByTarga").setParameter("targa",targa);
-      return (int) queryExecuted.getSingleResult();
-    }*/
+    public AutoEntity getAutoByDesc(String marca, String modello, String cilindrata, String motore, String carburante){
+      List<AutoEntity> list_of_auto_found = em.createNamedQuery("Auto.getAutoByDesc").setParameter("marca",marca)
+              .setParameter("modello",modello).setParameter("cilindrata",cilindrata).setParameter("motore",motore)
+              .setParameter("carburante",carburante).getResultList();
+      return list_of_auto_found.get(0);
+    }
 
     public AutoEntity getAutoById(int id){
         List<AutoEntity> autoEntities = em.createNamedQuery("Auto.getAutoById").setParameter("id", id).getResultList();

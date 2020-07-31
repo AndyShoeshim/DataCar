@@ -12,7 +12,7 @@ public class OfficinaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    int id_officina;
+    private int id_officina;
 
     @Column(nullable = false)
     private String rag_sociale;

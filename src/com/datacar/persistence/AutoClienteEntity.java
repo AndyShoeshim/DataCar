@@ -28,20 +28,20 @@ public class AutoClienteEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    int id;
+    private int id;
 
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "ID_CLIENTE")
-    ClienteEntity id_cliente;
+    private ClienteEntity id_cliente;
 
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "ID_AUTO")
-    AutoEntity id_auto;
+    private AutoEntity id_auto;
 
     @Column(nullable = false, unique = true)
-    String targa;
+    private String targa;
 
 
 

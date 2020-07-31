@@ -1,7 +1,9 @@
-package com.datacar.persistence;
+package com.datacar.controller;
 
 
 import com.datacar.model.Cliente;
+import com.datacar.persistence.ClienteEntity;
+import com.datacar.utility.ClienteDtoToEntity;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -18,7 +20,7 @@ public class ClienteRepository {
     EntityManager em;
 
     public void createCliente(Cliente cliente){
-        em.persist(new ClienteEntity(cliente));
+        em.persist(ClienteDtoToEntity.clienteEntityFromClienteDto(cliente));
         em.flush();
     }
 

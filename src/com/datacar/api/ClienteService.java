@@ -3,10 +3,8 @@ package com.datacar.api;
 
 import com.datacar.model.Cliente;
 import com.datacar.persistence.ClienteEntity;
-import com.datacar.persistence.ClienteRepository;
+import com.datacar.controller.ClienteRepository;
 import com.datacar.utility.ClienteEntityToDto;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.ejb.EJB;
 import javax.ws.rs.*;
