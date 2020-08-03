@@ -23,7 +23,8 @@ public class ClienteEntityToDto {
             email = clienteEntity.getEmail();
         else
             email = "";
-        Cliente cliente = new Cliente(nome,cognome,citta,cap,indirizzo,sesso,cod_fiscale,telefono,email);
+        //TODO Refactor cliente with factory pattern
+        Cliente cliente = new Cliente(nome,cognome,citta,cap,indirizzo,sesso,cod_fiscale,telefono,email,1);
         return cliente;
     }
 

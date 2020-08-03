@@ -48,6 +48,9 @@ public class ClienteEntity {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "id_cliente", orphanRemoval = true)
     private List<AutoClienteEntity> autoClienteList;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "id_cliente", orphanRemoval = true)
+    List<OfficinaClienteEntity> officinaClienteList;
+
     public ClienteEntity(){
     }
 
@@ -149,5 +152,13 @@ public class ClienteEntity {
 
     public void setAutoClienteList(List<AutoClienteEntity> autoClienteList) {
         this.autoClienteList = autoClienteList;
+    }
+
+    public List<OfficinaClienteEntity> getOfficinaClienteList() {
+        return officinaClienteList;
+    }
+
+    public void setOfficinaClienteList(List<OfficinaClienteEntity> officinaClienteList) {
+        this.officinaClienteList = officinaClienteList;
     }
 }

@@ -29,6 +29,11 @@ public class OfficinaRepository {
         return officinaFound.get(0);
     }
 
+    public OfficinaEntity getOfficinaById(int id){
+        List<OfficinaEntity> officinaFound = em.createNamedQuery("Officina.getOfficinaById").setParameter("id", id).getResultList();
+        return officinaFound.get(0);
+    }
+
     public boolean updateOfficina(String p_iva, Officina officina){
         OfficinaEntity updatedOfficina = findOfficinaByPiva(p_iva);
         if(updatedOfficina==null){

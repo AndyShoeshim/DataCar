@@ -23,7 +23,7 @@ public class TipoLavoroEntity {
         private String cod_tipo_lavoro;
     */
 
-    @Column(nullable = false)
+    //@Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private CategoriaLavoro  categoriaLavoro;
 

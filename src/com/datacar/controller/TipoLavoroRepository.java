@@ -10,4 +10,8 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class TipoLavoroRepository {
 
+
+
+
+    //TODO getId by Desc
 }

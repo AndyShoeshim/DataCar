@@ -4,10 +4,14 @@ package com.datacar.persistence;
 import com.datacar.model.Officina;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "officina")
 @Table(name = "officina")
-@NamedQuery(name = "Officina.findOfficinaByPiva" , query = " SELECT o FROM officina o WHERE o.p_iva = :p_iva ")
+@NamedQueries({
+        @NamedQuery(name = "Officina.findOfficinaByPiva" , query = " SELECT o FROM officina o WHERE o.p_iva = :p_iva "),
+        @NamedQuery(name = "Officina.getOfficinaById", query = "SELECT o FROM officina o WHERE o.id_officina =:id")
+})
 public class OfficinaEntity {
 
     @Id
@@ -31,6 +35,9 @@ public class OfficinaEntity {
 
     @Column(nullable = false)
     private String indirizzo;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "id_officina", orphanRemoval = true)
+    List<OfficinaClienteEntity> officinaClienteList;
 
     public OfficinaEntity(){
     }
@@ -98,5 +105,13 @@ public class OfficinaEntity {
 
     public void setIndirizzo(String indirizzo) {
         this.indirizzo = indirizzo;
+    }
+
+    public void setOfficinaClienteList(List<OfficinaClienteEntity> officinaClienteList) {
+        this.officinaClienteList = officinaClienteList;
+    }
+
+    public List<OfficinaClienteEntity> getOfficinaClienteList() {
+        return officinaClienteList;
     }
 }
