@@ -13,29 +13,23 @@ import java.util.List;
 @Table(name = "auto_cliente")
 @NamedQueries( {
         @NamedQuery(name = "AutoCliente.getAutoIdByClienteId", query = "select ac.id_auto from auto_cliente ac where ac.id_cliente=:id_cliente"),
-        @NamedQuery(name = "AutoCliente.findAutoOfCliente", query = "select a.id from auto_cliente ac, auto a where a.id=ac.id and ac.id_cliente=:id_cliente")
+        @NamedQuery(name = "AutoCliente.findAutoOfCliente", query = "select a.id from auto_cliente ac, auto a where a.id=ac.id and ac.id_cliente=:id_cliente"),
+        @NamedQuery(name = "AutoCliente.findAutoByTarga", query = "select ac from auto_cliente ac where ac.targa=:targa")
 })
 public class AutoClienteEntity {
 
-
-    /*
-        @NamedQuery(name = "Auto.findAutoByTarga", query = "select a.id from auto a where a.targa=:targa"
-
-        query per la ricerca della targa da modificare
-
-     */
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
 
-    @JsonIgnore
+
     @ManyToOne
     @JoinColumn(name = "ID_CLIENTE")
     private ClienteEntity id_cliente;
 
-    @JsonIgnore
+
     @ManyToOne
     @JoinColumn(name = "ID_AUTO")
     private AutoEntity id_auto;
