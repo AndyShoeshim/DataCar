@@ -8,22 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="85ec0f36-280e-4376-90d4-72a07704fc49" name="Default Changelist" comment="-- added libs for server log and auto entity">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DataCar/WEB-INF/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DataCar/WEB-INF/classes/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DataCar/WEB-INF/classes/com/datacar/controller/AutoClienteRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DataCar/WEB-INF/classes/com/datacar/controller/AutoClienteRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DataCar/WEB-INF/classes/com/datacar/controller/TipoLavoroRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DataCar/WEB-INF/classes/com/datacar/controller/TipoLavoroRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DataCar/WEB-INF/classes/com/datacar/persistence/AutoClienteEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DataCar/WEB-INF/classes/com/datacar/persistence/AutoClienteEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DataCar/WEB-INF/classes/com/datacar/persistence/TipoLavoroEntity$CategoriaLavoro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DataCar/WEB-INF/classes/com/datacar/persistence/TipoLavoroEntity$CategoriaLavoro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DataCar/WEB-INF/classes/com/datacar/persistence/TipoLavoroEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DataCar/WEB-INF/classes/com/datacar/persistence/TipoLavoroEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataCar/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataCar/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataCar/com/datacar/controller/AutoClienteRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataCar/com/datacar/controller/AutoClienteRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataCar/com/datacar/controller/TipoLavoroRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataCar/com/datacar/controller/TipoLavoroRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataCar/com/datacar/persistence/AutoClienteEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataCar/com/datacar/persistence/AutoClienteEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataCar/com/datacar/persistence/TipoLavoroEntity$CategoriaLavoro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataCar/com/datacar/persistence/TipoLavoroEntity$CategoriaLavoro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataCar/com/datacar/persistence/TipoLavoroEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataCar/com/datacar/persistence/TipoLavoroEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/datacar/controller/AutoClienteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/datacar/controller/AutoClienteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/datacar/controller/TipoLavoroRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/datacar/controller/TipoLavoroRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/datacar/persistence/AutoClienteEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/datacar/persistence/AutoClienteEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/datacar/persistence/TipoLavoroEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/datacar/persistence/TipoLavoroEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/DataCar/WEB-INF/classes/com/datacar/persistence/TipoLavoroEntity$CategoriaLavoro.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataCar/com/datacar/persistence/TipoLavoroEntity$CategoriaLavoro.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/persistence.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,7 +36,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/datacar/api/LavoroService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
+            <state relative-caret-position="153">
               <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -62,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/src/META-INF/persistence.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+              <caret line="17" column="69" lean-forward="true" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -123,11 +110,11 @@
         <option value="$PROJECT_DIR$/src/com/datacar/persistence/LavoroEntity.java" />
         <option value="$PROJECT_DIR$/src/com/datacar/controller/AutoClienteRepository.java" />
         <option value="$PROJECT_DIR$/src/com/datacar/controller/LavoroRepository.java" />
-        <option value="$PROJECT_DIR$/src/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/src/com/datacar/persistence/TipoLavoroEntity.java" />
         <option value="$PROJECT_DIR$/src/com/datacar/persistence/DescrizioneLavoroEntity.java" />
         <option value="$PROJECT_DIR$/src/com/datacar/utility/LavoroEntityToDto.java" />
         <option value="$PROJECT_DIR$/src/com/datacar/api/LavoroService.java" />
+        <option value="$PROJECT_DIR$/src/META-INF/persistence.xml" />
       </list>
     </option>
   </component>
@@ -139,8 +126,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-284" />
-    <option name="y" value="71" />
+    <option name="x" value="-285" />
+    <option name="y" value="70" />
     <option name="width" value="1940" />
     <option name="height" value="1050" />
   </component>
@@ -152,6 +139,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="DataCar" type="58d84e3e:PackageViewProjectNode" />
+              <item name="DataCar" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,18 +184,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="DataCar" type="58d84e3e:PackageViewProjectNode" />
-              <item name="DataCar" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -333,11 +320,12 @@
       <workItem from="1596482105003" duration="4600000" />
       <workItem from="1596563940557" duration="9746000" />
       <workItem from="1596575808801" duration="78000" />
+      <workItem from="1596643331087" duration="451000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78522000" />
+    <option name="totallyTimeSpent" value="78973000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -350,6 +338,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="1" />
@@ -357,10 +346,10 @@
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Web" order="5" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.26778522" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.27181208" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -823,7 +812,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/datacar/api/LavoroService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
+        <state relative-caret-position="153">
           <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -834,7 +823,7 @@
     <entry file="file://$PROJECT_DIR$/src/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <caret line="17" column="69" lean-forward="true" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
         </state>
       </provider>
     </entry>
