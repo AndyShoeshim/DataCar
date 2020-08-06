@@ -24,7 +24,7 @@ public class ClienteEntityToDto {
         else
             email = "";
         //TODO Refactor cliente with factory pattern
-        Cliente cliente = new Cliente(nome,cognome,citta,cap,indirizzo,sesso,cod_fiscale,telefono,email,1);
+        Cliente cliente = new Cliente(nome,cognome,citta,cap,indirizzo,sesso,cod_fiscale,telefono,email);
         return cliente;
     }
 

@@ -9,7 +9,7 @@ import java.util.List;
 @Entity(name = "cliente")
 @Table(name = "cliente")
 @NamedQueries({
-        @NamedQuery(name = "Cliente.findClienteByCodFiscale" , query = " SELECT c FROM cliente c WHERE c.cod_fiscale = :cod_fiscale "),
+        @NamedQuery(name = "Cliente.findClienteByCodFiscale" , query = "SELECT c FROM cliente c WHERE c.cod_fiscale =:cod_fiscale "),
         @NamedQuery(name = "Cliente.getAllCliente", query = "SELECT c FROM cliente c")
 })
 public class ClienteEntity {

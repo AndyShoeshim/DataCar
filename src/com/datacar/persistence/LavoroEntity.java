@@ -1,12 +1,14 @@
 package com.datacar.persistence;
 
+import javax.json.bind.annotation.JsonbDateFormat;
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity(name = "lavoro")
 @Table(name = "lavoro")
 @NamedQueries( {
         @NamedQuery(name = "Lavoro.getAllLavoro", query = "select l from lavoro l where l.id_officina=:id_officina"),
-        @NamedQuery(name = "Lavoro.getLavoroByTarga", query = "select l from lavoro l where l.targa=:targa")
+        @NamedQuery(name = "Lavoro.getLavoroByTarga", query = "select l from lavoro l where l.targa=:targa and l.id_officina=:id_officina")
 })
 public class LavoroEntity {
 
@@ -30,6 +32,13 @@ public class LavoroEntity {
     @JoinColumn(name = "ID_DESCRIZIONE_LAVORO", nullable = false)
     DescrizioneLavoroEntity id_desc_lavoro;
 
+    @Column
+    @JsonbDateFormat("dd.MM.yyyy")
+    Date dataScandenza;
+
+    @Column
+    boolean effettuato;
+
     public LavoroEntity() {
     }
 
@@ -38,6 +47,15 @@ public class LavoroEntity {
         this.targa = targa;
         this.id_tipo_lavoro = id_tipo_lavoro;
         this.id_desc_lavoro = id_desc_lavoro;
+    }
+
+    public LavoroEntity(OfficinaEntity id_officina, String targa, TipoLavoroEntity id_tipo_lavoro, DescrizioneLavoroEntity id_desc_lavoro, Date dataScandenza, boolean effettuato) {
+        this.id_officina = id_officina;
+        this.targa = targa;
+        this.id_tipo_lavoro = id_tipo_lavoro;
+        this.id_desc_lavoro = id_desc_lavoro;
+        this.dataScandenza = dataScandenza;
+        this.effettuato = effettuato;
     }
 
     public int getId() {
@@ -78,5 +96,17 @@ public class LavoroEntity {
 
     public String getTarga() {
         return targa;
+    }
+
+    public Date getDataScandenza() {
+        return dataScandenza;
+    }
+
+    public void setEffettuato(boolean effettuato) {
+        this.effettuato = effettuato;
+    }
+
+    public boolean isEffettuato() {
+        return effettuato;
     }
 }

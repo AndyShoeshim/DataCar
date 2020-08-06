@@ -31,14 +31,11 @@ public class Cliente {
     @JsonbProperty
     String email;
 
-    @JsonbProperty
-    int id_officina;
-
     public Cliente(){
 
     }
 
-    public Cliente(String nome, String cognome, String citta, String cap, String indirizzo, String sesso, String cod_fiscale, int telefono, String email, int id_officina) {
+    public Cliente(String nome, String cognome, String citta, String cap, String indirizzo, String sesso, String cod_fiscale, int telefono, String email) {
         this.nome = nome;
         this.cognome = cognome;
         this.citta = citta;
@@ -48,7 +45,6 @@ public class Cliente {
         this.cod_fiscale = cod_fiscale;
         this.telefono = telefono;
         this.email = email;
-        this.id_officina = id_officina;
     }
 
     public String getNome() {
@@ -87,7 +83,4 @@ public class Cliente {
         return email;
     }
 
-    public int getId_officina() {
-        return id_officina;
-    }
 }

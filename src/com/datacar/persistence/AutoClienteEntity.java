@@ -13,8 +13,10 @@ import java.util.List;
 @Table(name = "auto_cliente")
 @NamedQueries( {
         @NamedQuery(name = "AutoCliente.getAutoIdByClienteId", query = "select ac.id_auto from auto_cliente ac where ac.id_cliente=:id_cliente"),
-        @NamedQuery(name = "AutoCliente.findAutoOfCliente", query = "select a.id from auto_cliente ac, auto a where a.id=ac.id and ac.id_cliente=:id_cliente"),
-        @NamedQuery(name = "AutoCliente.findAutoByTarga", query = "select ac from auto_cliente ac where ac.targa=:targa")
+        @NamedQuery(name = "AutoCliente.getClienteIdByTarga", query = "select ac.id_cliente from auto_cliente ac where ac.targa=:targa"),
+        //@NamedQuery(name = "AutoCliente.findAutoOfCliente", query = "select a.id from auto_cliente ac, auto a where a.id=ac.id and ac.id_cliente=:id_cliente"),
+        @NamedQuery(name = "AutoCliente.findAutoByTarga", query = "select ac from auto_cliente ac where ac.targa=:targa"),
+        @NamedQuery(name = "AutoCliente.finTargaOfCliente", query = "select ac.targa from auto_cliente ac, cliente c where c.cod_fiscale=:cod_fiscale and ac.id_cliente=c")
 })
 public class AutoClienteEntity {
 

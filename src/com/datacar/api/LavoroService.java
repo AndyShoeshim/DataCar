@@ -12,6 +12,7 @@ import javax.ejb.EJB;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -44,7 +45,8 @@ public class LavoroService {
         DescrizioneLavoroEntity descrizioneLavoroEntity = descrizioneLavoroRepository.getLavoroEntityByDesc(lavoro.getDescLavoro());
         String targa = lavoro.getTarga();
             if(autoClienteRepository.getAutoClienteByTarga(targa)!=null){
-                lavoroRepository.createLavoro(officinaEntity,targa,tipoLavoroEntity,descrizioneLavoroEntity);
+                //lavoroRepository.createLavoro(officinaEntity,targa,tipoLavoroEntity,descrizioneLavoroEntity);
+                lavoroRepository.createLavoro(officinaEntity,lavoro,tipoLavoroEntity,descrizioneLavoroEntity);
                 return Response.status(Response.Status.OK).build();
             } else {
                 return Response.status(Response.Status.BAD_REQUEST).build();
@@ -60,4 +62,25 @@ public class LavoroService {
         List<Lavoro> lavoroDtoList = LavoroEntityToDto.getLavoroDtoListFromLavoroEntity(lavoroEntityList);
         return Response.status(Response.Status.OK).entity(lavoroDtoList).build();
     }
+
+    @GET
+    @Path("/{id_officina}/{cod_fiscale}")
+    public Response getLavoroOfCliente(@PathParam("id_officina") int id_officina, @PathParam("cod_fiscale") String cod_fiscale){
+        OfficinaEntity officinaEntity = officinaRepository.getOfficinaById(id_officina);
+        List<String> targhe = autoClienteRepository.getTargaOfCliente(cod_fiscale);
+        List<Lavoro> lavoroDtoList = new ArrayList<>();
+        for(String targa : targhe){
+            List<LavoroEntity> lavoroFound = lavoroRepository.getLavoroByTarga(targa,officinaEntity);
+            for(LavoroEntity lavoroEntity : lavoroFound){
+                lavoroDtoList.add(LavoroEntityToDto.getLavoroDtoFromLavoroEntity(lavoroEntity));
+            }
+        }
+        if(lavoroDtoList.size()>0)
+            return Response.status(Response.Status.OK).entity(lavoroDtoList).build();
+        else
+            return Response.status(Response.Status.NOT_FOUND).build();
+    }
+
+
+    //TODO select data del laovoro, post per cambiare se effettuato o meno e get cliente da targa e get lavoro del cliente
 }

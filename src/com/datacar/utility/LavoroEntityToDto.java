@@ -16,7 +16,7 @@ public class LavoroEntityToDto {
         String targa = lavoroEntity.getTarga();
         String tipoLavoro = lavoroEntity.getId_tipo_lavoro().getCategoriaLavoro();
         String descLavoro = lavoroEntity.getId_desc_lavoro().getDescrizioneLavoro();
-        return new Lavoro(targa,tipoLavoro,descLavoro);
+        return new Lavoro(targa,tipoLavoro,descLavoro,lavoroEntity.getDataScandenza(),lavoroEntity.isEffettuato());
     }
 
     public static List<Lavoro> getLavoroDtoListFromLavoroEntity(List<LavoroEntity> lavoroEntities){

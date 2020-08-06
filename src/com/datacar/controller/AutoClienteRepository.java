@@ -28,8 +28,18 @@ public class AutoClienteRepository {
         return list_of_auto_entities;
     }
 
+    public ClienteEntity getClienteByTarga(String targa){
+        List<ClienteEntity> clienteList = em.createNamedQuery("AutoCliente.getClienteIdByTarga").setParameter("targa",targa).getResultList();
+        return clienteList.get(0);
+    }
+
     public AutoClienteEntity getAutoClienteByTarga(String targa){
         List<AutoClienteEntity> autoCliente = em.createNamedQuery("AutoCliente.findAutoByTarga").setParameter("targa",targa).getResultList();
         return autoCliente.get(0);
+    }
+
+    public List<String> getTargaOfCliente(String cod_fiscale){
+        List<String> list_of_cliente_targhe = em.createNamedQuery("AutoCliente.finTargaOfCliente").setParameter("cod_fiscale",cod_fiscale).getResultList();
+        return list_of_cliente_targhe;
     }
 }

@@ -7,6 +7,7 @@ import com.datacar.model.Cliente;
 import com.datacar.persistence.ClienteEntity;
 import com.datacar.controller.ClienteRepository;
 import com.datacar.persistence.OfficinaEntity;
+import com.datacar.utility.ClienteDtoToEntity;
 import com.datacar.utility.ClienteEntityToDto;
 
 import javax.ejb.EJB;
@@ -27,26 +28,7 @@ public class ClienteService {
     @EJB
     OfficinaClienteRepository officinaClienteRepository;
 
-   /*
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllCliente(){
-        List<ClienteEntity> clienteEntities = clienteRepository.getAllCliente();
-        return Response.status(Response.Status.OK).entity(ClienteEntityToDto.getListClienteDTOfromListEntity(clienteEntities)).build();
-    }
-    */
 
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{cod_fiscale}")
-    public Response getClienteFromId(@PathParam("cod_fiscale") String cod_fiscale){
-        try {
-            ClienteEntity clienteFound = clienteRepository.findClienteByCodFiscale(cod_fiscale);
-            return Response.status(Response.Status.OK).entity(ClienteEntityToDto.getClienteDTOfromEntity(clienteFound)).build();
-        } catch (Exception e){
-            return Response.status(Response.Status.NOT_FOUND).build();
-        }
-    }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -57,20 +39,45 @@ public class ClienteService {
         return Response.status(Response.Status.OK).entity(ClienteEntityToDto.getListClienteDTOfromListEntity(clienteEntities)).build();
     }
 
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response createCliente(Cliente cliente){
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/{id_officina}/{cod_fiscale}")
+    public Response getClienteFromId(@PathParam("id_officina") int id_officina, @PathParam("cod_fiscale") String cod_fiscale){
         try {
-            //TODO CONSIDER HEAVY REFACTOR OF THIS SERVICE
+            OfficinaEntity officinaEntity = officinaRepository.getOfficinaById(id_officina);
+
+            boolean isFound=false;
+            List<ClienteEntity> clienteEntities = officinaClienteRepository.getClienteListOfOfficina(officinaEntity);
+            for(ClienteEntity clienteEntity : clienteEntities){
+                if(clienteEntity.getCod_fiscale().equals(cod_fiscale))
+                    isFound=true;
+
+            }
+
+            if(isFound) {
+                ClienteEntity clienteFound = clienteRepository.findClienteByCodFiscale(cod_fiscale);
+                return Response.status(Response.Status.OK).entity(ClienteEntityToDto.getClienteDTOfromEntity(clienteFound)).build();
+            }
+            else
+                return Response.status(Response.Status.NOT_FOUND).build();
+        } catch (Exception e){
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
+    }
+
+    @POST
+    @Path("/{id_officina}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response createCliente(@PathParam("id_officina") int id_officina, Cliente cliente){
+        try {
+            OfficinaEntity officinaEntity = officinaRepository.getOfficinaById(id_officina);
             clienteRepository.createCliente(cliente);
-            OfficinaEntity officinaEntity = officinaRepository.getOfficinaById(cliente.getId_officina());
             ClienteEntity clienteEntity = clienteRepository.findClienteByCodFiscale(cliente.getCod_fiscale());
             officinaClienteRepository.createOfficinaCliente(officinaEntity,clienteEntity);
             return Response.status(Response.Status.OK).build();
         } catch (Exception e) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
-
     }
 
     @PUT
