@@ -23,6 +23,12 @@ public class OfficinaRepository {
         em.flush();
     }
 
+    public int officinaLogin(String email, String password) {
+        int officinaId = (int) em.createNamedQuery("Officina.getOfficinaIdByEmailAndPassword")
+                .setParameter("email", email).setParameter("password",password).getResultList().get(0);
+        return officinaId;
+    }
+
 
     public OfficinaEntity findOfficinaByPiva(String p_iva){
         List<OfficinaEntity> officinaFound = em.createNamedQuery("Officina.findOfficinaByPiva").setParameter("p_iva",p_iva).getResultList();

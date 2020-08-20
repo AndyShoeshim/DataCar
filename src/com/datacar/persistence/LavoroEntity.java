@@ -42,13 +42,6 @@ public class LavoroEntity {
     public LavoroEntity() {
     }
 
-    public LavoroEntity(OfficinaEntity id_officina, String targa, TipoLavoroEntity id_tipo_lavoro, DescrizioneLavoroEntity id_desc_lavoro) {
-        this.id_officina = id_officina;
-        this.targa = targa;
-        this.id_tipo_lavoro = id_tipo_lavoro;
-        this.id_desc_lavoro = id_desc_lavoro;
-    }
-
     public LavoroEntity(OfficinaEntity id_officina, String targa, TipoLavoroEntity id_tipo_lavoro, DescrizioneLavoroEntity id_desc_lavoro, Date dataScandenza, boolean effettuato) {
         this.id_officina = id_officina;
         this.targa = targa;

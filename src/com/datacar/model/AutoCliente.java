@@ -30,26 +30,6 @@ public class AutoCliente {
     public AutoCliente(){
     }
 
-  /*
-
-      @JsonbProperty
-       private int auto_id;
-
-
-    public AutoCliente(String targa, String cod_fiscale, int auto_id) {
-        this.targa = targa;
-        this.cod_fiscale = cod_fiscale;
-        this.auto_id = auto_id;
-    }
-
-    public void setAuto_id(int auto_id) {
-//        this.auto_id = auto_id;
-//    }
-      public int getAuto_id() {
-//        return auto_id;
-//    }
-
-    */
 
     public AutoCliente(String targa, String cod_fiscale, String marca, String modello, String motore, String cilindrata, String carburante) {
         this.targa = targa;

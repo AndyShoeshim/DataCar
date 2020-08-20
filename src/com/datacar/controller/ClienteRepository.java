@@ -50,6 +50,7 @@ public class ClienteRepository {
         }
 
         em.merge(clienteOld);
+        em.flush();
         return true;
     }
 
@@ -60,7 +61,7 @@ public class ClienteRepository {
 
     public boolean deleteCliente(String cod_fiscale){
         ClienteEntity clienteToDelete = findClienteByCodFiscale(cod_fiscale);
-        if(clienteToDelete!=null){
+        if(clienteToDelete==null){
             return false;
         }
         em.remove(clienteToDelete);

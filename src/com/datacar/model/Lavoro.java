@@ -24,11 +24,6 @@ public class Lavoro {
     public Lavoro() {
     }
 
-    public Lavoro(String targa, String tipoLavoro, String descLavoro) {
-        this.targa = targa;
-        this.tipoLavoro = tipoLavoro;
-        this.descLavoro = descLavoro;
-    }
 
     public Lavoro(String targa, String tipoLavoro, String descLavoro, Date dataScandenza, boolean effettuato) {
         this.targa = targa;

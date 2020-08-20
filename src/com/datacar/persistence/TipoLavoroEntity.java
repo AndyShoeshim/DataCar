@@ -17,12 +17,6 @@ public class TipoLavoroEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
 
-    /*
-        @Column(nullable = false)
-        private String cod_tipo_lavoro;
-    */
-
-
     @Column(nullable = false)
     private String categoriaLavoro;
 

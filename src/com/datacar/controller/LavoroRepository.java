@@ -18,12 +18,6 @@ public class LavoroRepository {
     EntityManager em;
 
 
-    public void createLavoro(OfficinaEntity officinaEntity, String targa, TipoLavoroEntity tipoLavoroEntity, DescrizioneLavoroEntity descrizioneLavoroEntity) {
-        LavoroEntity lavoroEntity = new LavoroEntity(officinaEntity,targa,tipoLavoroEntity,descrizioneLavoroEntity);
-        em.persist(lavoroEntity);
-        em.flush();
-    }
-
     public void createLavoro(OfficinaEntity officinaEntity,Lavoro lavoro, TipoLavoroEntity tipoLavoroEntity, DescrizioneLavoroEntity descrizioneLavoroEntity) {
         LavoroEntity lavoroEntity = new LavoroEntity(officinaEntity,lavoro.getTarga(),tipoLavoroEntity,descrizioneLavoroEntity, lavoro.getDataScandenza(), lavoro.isEffettuato());
         em.persist(lavoroEntity);

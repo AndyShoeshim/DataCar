@@ -3,6 +3,7 @@ package com.datacar.persistence;
 
 import com.datacar.model.Officina;
 
+import javax.inject.Named;
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,7 +11,8 @@ import java.util.List;
 @Table(name = "officina")
 @NamedQueries({
         @NamedQuery(name = "Officina.findOfficinaByPiva" , query = " SELECT o FROM officina o WHERE o.p_iva = :p_iva "),
-        @NamedQuery(name = "Officina.getOfficinaById", query = "SELECT o FROM officina o WHERE o.id_officina =:id")
+        @NamedQuery(name = "Officina.getOfficinaById", query = "SELECT o FROM officina o WHERE o.id_officina =:id"),
+        @NamedQuery(name = "Officina.getOfficinaIdByEmailAndPassword", query = "SELECT o.id_officina FROM officina o WHERE o.email=:email AND o.password=:password")
 })
 public class OfficinaEntity {
 

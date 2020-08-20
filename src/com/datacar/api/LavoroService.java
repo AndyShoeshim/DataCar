@@ -45,7 +45,6 @@ public class LavoroService {
         DescrizioneLavoroEntity descrizioneLavoroEntity = descrizioneLavoroRepository.getLavoroEntityByDesc(lavoro.getDescLavoro());
         String targa = lavoro.getTarga();
             if(autoClienteRepository.getAutoClienteByTarga(targa)!=null){
-                //lavoroRepository.createLavoro(officinaEntity,targa,tipoLavoroEntity,descrizioneLavoroEntity);
                 lavoroRepository.createLavoro(officinaEntity,lavoro,tipoLavoroEntity,descrizioneLavoroEntity);
                 return Response.status(Response.Status.OK).build();
             } else {
@@ -82,5 +81,5 @@ public class LavoroService {
     }
 
 
-    //TODO select data del laovoro, post per cambiare se effettuato o meno e get cliente da targa e get lavoro del cliente
+    //TODO select data in base a data del laovoro, post per cambiare se effettuato o meno  e select degli ultimi 10 lavori
 }
