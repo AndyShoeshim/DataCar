@@ -5,7 +5,6 @@ INSERT INTO `datacar`.`descrizione_lavoro` (`ID`, `DESCRIZIONELAVORO`) VALUES ('
 INSERT INTO `datacar`.`descrizione_lavoro` (`ID`, `DESCRIZIONELAVORO`) VALUES ('5', 'SOSTITUZIONE_PASTIGLIE');
 INSERT INTO `datacar`.`descrizione_lavoro` (`ID`, `DESCRIZIONELAVORO`) VALUES ('6', 'SOSTITUZIONE_CINGHIA_DISTR');
 INSERT INTO `datacar`.`descrizione_lavoro` (`ID`, `DESCRIZIONELAVORO`) VALUES ('7', 'REGOLAGGIO_LIVELLI');
-
 INSERT INTO `datacar`.`descrizione_lavoro` (`ID`, `DESCRIZIONELAVORO`) VALUES ('8', 'BRACCETTO_SX');
 INSERT INTO `datacar`.`descrizione_lavoro` (`ID`, `DESCRIZIONELAVORO`) VALUES ('9', 'BRACCETTO_DX');
 INSERT INTO `datacar`.`descrizione_lavoro` (`ID`, `DESCRIZIONELAVORO`) VALUES ('10', 'PULLEGIE');
@@ -14,9 +13,6 @@ INSERT INTO `datacar`.`descrizione_lavoro` (`ID`, `DESCRIZIONELAVORO`) VALUES ('
 INSERT INTO `datacar`.`descrizione_lavoro` (`ID`, `DESCRIZIONELAVORO`) VALUES ('13', 'TURBINA_AVARIATA');
 INSERT INTO `datacar`.`descrizione_lavoro` (`ID`, `DESCRIZIONELAVORO`) VALUES ('14', 'MALFUNZIONAMENTO_ALTERNATORE');
 INSERT INTO `datacar`.`descrizione_lavoro` (`ID`, `DESCRIZIONELAVORO`) VALUES ('15', 'MALFUNZIONAMENTO_MOTORINO_AVARIATO');
-
-
-
 INSERT INTO `datacar`.`descrizione_lavoro` (`ID`, `DESCRIZIONELAVORO`) VALUES ('16', 'AZZERAMENTO_KILOMETRI');
 INSERT INTO `datacar`.`descrizione_lavoro` (`ID`, `DESCRIZIONELAVORO`) VALUES ('17', 'CANCELLAZIONE_FAP');
 INSERT INTO `datacar`.`descrizione_lavoro` (`ID`, `DESCRIZIONELAVORO`) VALUES ('18', 'INDIVIDUAZIONE_ERRORI_CENTRALINA');
@@ -27,3 +23,40 @@ INSERT INTO `datacar`.`tipo_lavoro` (`ID`, `CATEGORIALAVORO`) VALUES ('1', 'MANU
 INSERT INTO `datacar`.`tipo_lavoro` (`ID`, `CATEGORIALAVORO`) VALUES ('2', 'GUASTO');
 INSERT INTO `datacar`.`tipo_lavoro` (`ID`, `CATEGORIALAVORO`) VALUES ('3', 'DIAGNOSI');
 
+
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Audi', 'A1', 'Eco', '1.3', 'Benzina', '100');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Audi', 'A2', 'Eco', '1.4', 'Benzina', '120');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Audi', 'A3', 'JTD', '1.4', 'Diesel', '150');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('BMW', 'X1', 'Turbo', '1.9', 'Diesel', '110');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('BMW', 'X3', 'Turbo', '2.3', 'Diesel', '150');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Mercedes', 'A180', 'Turbo', '1.4', 'Benzina', '90');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Mercedes', 'C200', 'Turbo', '1.9', 'Diesel', '110');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Ford', 'Fiesta', 'Eco', '1.4', 'Benzina', '75');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Fiat', '500X', 'Multijet', '1.2', 'Benzina', '130');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Fiat', '500L', 'Multijet', '1.2', 'Benzina', '110');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Fiat', '500', 'Eco', '1.0', 'Benzina', '90');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Fiat', 'Punto', 'Multijet', '1.3', 'Diesel', '95');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Fiat', 'Panda', 'Eco', '1.0', 'Benzina', '75');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Citroen', 'C1', 'HDI', '1.2', 'Benzina', '60');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Citroen', 'C3', 'HDI', '1.4', 'Diesel', '75');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Citroen', 'C4', 'HDI', '1.3', 'Diesel', '80');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Alfa Romeo', 'Giulia', 'Turbo', '1.6', 'Diesel', '140');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Alfa Romeo', 'Giulietta', 'JTD', '1.6', 'Diesel', '180');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Alfa Romeo', 'Stelvio', 'Turbo', '2.2', 'Diesel', '180');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Volkswagen', 'Golf', 'JTD', '1.9', 'Diesel', '130');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Volkswagen', 'Passat', 'JTD', '1.9', 'Diesel', '140');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Volkswagen', 'Tuareg', 'JTD', '2.3', 'Diesel', '140');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Volkswagen', 'Polo', 'JTD', '1.2', 'Benzina', '95');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Hunday', 'ix35', 'Eco', '1.7', 'Diesel', '140');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Hunday', 'Tucson', 'Eco', '1.9', 'Diesel', '135');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Hunday', 'ix25', 'Eco', '1.2', 'Ibrida', '75');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Opel', 'Astra', 'Eco', '1.6', 'Diesel', '130');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Opel', 'Corsa', 'Multijet', '1.3', 'Benzina', '90');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Opel', 'Mokka', 'HDI', '1.9', 'Benzina', '110');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Peugeot', '3008', 'Eco', '1.4', 'Diesel', '150');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Peugeot', '207', 'Eco', '1.4', 'Benzina', '75');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Peugeot', '5008', 'Turbo', '1.8', 'Diesel', '140');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Peugeot', '208', 'JTD', '1.3', 'Diesel', '100');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Renault', 'Clio', 'JTD', '1.3', 'Diesel', '90');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Renualt', 'Megane', 'Eco', '1.5', 'Diesel', '140');
+INSERT INTO `datacar`.`auto` (`MARCA`, `MODELLO`, `MOTORE`, `CILINDRATA`, `CARBURANTE`, `CAVALLI`) VALUES ('Lancia', 'Y', 'JTD', '1.3', 'Benzina', '75');
