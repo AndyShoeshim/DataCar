@@ -3,13 +3,12 @@ package com.datacar.utility;
 import com.datacar.model.Cliente;
 import com.datacar.persistence.ClienteEntity;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class ClienteEntityToDto {
 
 
-    public static Cliente getClienteDTOfromEntity(ClienteEntity clienteEntity) {
+    public static Cliente getClienteDTOfromEntity(ClienteEntity clienteEntity, int targhe_associate) {
         String nome = clienteEntity.getNome();
         String cognome = clienteEntity.getCognome();
         String citta = clienteEntity.getCitta();
@@ -24,15 +23,9 @@ public class ClienteEntityToDto {
         else
             email = "";
         //TODO Refactor cliente with factory pattern
-        Cliente cliente = new Cliente(nome,cognome,citta,cap,indirizzo,sesso,cod_fiscale,telefono,email);
+        Cliente cliente = new Cliente(nome,cognome,citta,cap,indirizzo,sesso,cod_fiscale,telefono,email, targhe_associate);
+        cliente.setId(clienteEntity.getId());
         return cliente;
     }
 
-    public static List<Cliente> getListClienteDTOfromListEntity(List<ClienteEntity> clienteEntities){
-        List<Cliente> clienteList = new ArrayList<>();
-        for(ClienteEntity clienteEntity : clienteEntities){
-            clienteList.add(getClienteDTOfromEntity(clienteEntity));
-        }
-        return clienteList;
-    }
 }

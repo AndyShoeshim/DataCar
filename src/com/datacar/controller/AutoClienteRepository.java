@@ -1,7 +1,6 @@
 package com.datacar.controller;
 
 
-import com.datacar.model.AutoCliente;
 import com.datacar.persistence.*;
 
 import javax.ejb.LocalBean;
@@ -42,4 +41,5 @@ public class AutoClienteRepository {
         List<String> list_of_cliente_targhe = em.createNamedQuery("AutoCliente.finTargaOfCliente").setParameter("cod_fiscale",cod_fiscale).getResultList();
         return list_of_cliente_targhe;
     }
+
 }

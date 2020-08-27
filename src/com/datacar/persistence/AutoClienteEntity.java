@@ -1,13 +1,8 @@
 package com.datacar.persistence;
 
 
-import com.datacar.model.AutoCliente;
-import com.datacar.model.Cliente;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
-import java.util.List;
+
 
 @Entity(name = "auto_cliente")
 @Table(name = "auto_cliente")

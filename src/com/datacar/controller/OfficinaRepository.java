@@ -6,7 +6,6 @@ import com.datacar.persistence.OfficinaEntity;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.NamedQuery;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
@@ -18,9 +17,11 @@ public class OfficinaRepository {
     @PersistenceContext
     EntityManager em;
 
-    public void createOfficina(Officina officina){
-        em.persist(new OfficinaEntity(officina));
+    public int createOfficina(Officina officina){
+        OfficinaEntity officinaEntity = new OfficinaEntity(officina);
+        em.persist(officinaEntity);
         em.flush();
+        return officinaEntity.getId_officina();
     }
 
     public int officinaLogin(String email, String password) {

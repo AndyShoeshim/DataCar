@@ -80,6 +80,7 @@ public class LavoroService {
             return Response.status(Response.Status.NOT_FOUND).build();
     }
 
-
-    //TODO select data in base a data del laovoro, post per cambiare se effettuato o meno  e select degli ultimi 10 lavori
+    //TODO select data in base a data del laovoro
+    // post per cambiare se effettuato o meno
+    // select degli ultimi 10 lavori
 }

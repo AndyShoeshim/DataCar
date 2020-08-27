@@ -64,6 +64,7 @@ public class AutoClienteService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getClienteFromTarga(@PathParam("targa") String targa){
         ClienteEntity clienteEntity = autoClienteRepository.getClienteByTarga(targa);
-        return Response.status(Response.Status.OK).entity(ClienteEntityToDto.getClienteDTOfromEntity(clienteEntity)).build();
+        int num_targhe_associate = autoClienteRepository.getAllClienteAuto(clienteEntity).size();
+        return Response.status(Response.Status.OK).entity(ClienteEntityToDto.getClienteDTOfromEntity(clienteEntity,num_targhe_associate)).build();
     }
 }

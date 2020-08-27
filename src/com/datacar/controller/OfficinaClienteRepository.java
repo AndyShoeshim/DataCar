@@ -27,4 +27,14 @@ public class OfficinaClienteRepository {
         List<ClienteEntity> clienteEntities = em.createNamedQuery("OfficinaCliente.getAllClienteOfOfficina").setParameter("id_officina", officinaEntity).getResultList();
         return clienteEntities;
     }
+
+    public boolean deleteByCliente(OfficinaEntity officinaEntity, ClienteEntity clienteEntity){
+        List<OfficinaClienteEntity> results = em.createNamedQuery("OfficinaCliente.getOfficinaCliente")
+                .setParameter("id_officina",officinaEntity).setParameter("id_cliente",clienteEntity).getResultList();
+        if(results.get(0)==null){
+            return false;
+        }
+        em.remove(results.get(0));
+        return true;
+    }
 }

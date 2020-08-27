@@ -26,3 +26,4 @@ INSERT INTO `datacar`.`descrizione_lavoro` (`ID`, `DESCRIZIONELAVORO`) VALUES ('
 INSERT INTO `datacar`.`tipo_lavoro` (`ID`, `CATEGORIALAVORO`) VALUES ('1', 'MANUTENZIONE');
 INSERT INTO `datacar`.`tipo_lavoro` (`ID`, `CATEGORIALAVORO`) VALUES ('2', 'GUASTO');
 INSERT INTO `datacar`.`tipo_lavoro` (`ID`, `CATEGORIALAVORO`) VALUES ('3', 'DIAGNOSI');
+

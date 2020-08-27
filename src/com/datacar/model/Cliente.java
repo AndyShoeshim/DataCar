@@ -5,6 +5,9 @@ import javax.json.bind.annotation.JsonbProperty;
 public class Cliente {
 
     @JsonbProperty
+    private int id;
+
+    @JsonbProperty
     String nome;
 
     @JsonbProperty
@@ -31,11 +34,14 @@ public class Cliente {
     @JsonbProperty
     String email;
 
+    @JsonbProperty
+    int targhe_associate;
+
     public Cliente(){
 
     }
 
-    public Cliente(String nome, String cognome, String citta, String cap, String indirizzo, String sesso, String cod_fiscale, int telefono, String email) {
+    public Cliente(String nome, String cognome, String citta, String cap, String indirizzo, String sesso, String cod_fiscale, int telefono, String email, int targhe_associate) {
         this.nome = nome;
         this.cognome = cognome;
         this.citta = citta;
@@ -45,6 +51,15 @@ public class Cliente {
         this.cod_fiscale = cod_fiscale;
         this.telefono = telefono;
         this.email = email;
+        this.targhe_associate = targhe_associate;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNome() {
@@ -83,4 +98,7 @@ public class Cliente {
         return email;
     }
 
+    public int getTarghe_associate() {
+        return targhe_associate;
+    }
 }

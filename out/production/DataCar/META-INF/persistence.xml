@@ -2,7 +2,6 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
     <persistence-unit name="exerciseProvider"
                       transaction-type="JTA">
-        <!-- <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
         <jta-data-source>jdbc/datacar</jta-data-source>
         <properties>
 
@@ -12,9 +11,10 @@
             <!--<property name="eclipselink.ddl-generation" value="create-tables"/>-->
             <!--<property name="eclipselink.ddl-generation.output-mode" value="database"/>-->
 
+            <!-- <property name="javax.persistence.schema-generation.drop-source" value="metadata"/>-->
+
             <property name="javax.persistence.schema-generation.database.action" value="create"/>
             <property name="javax.persistence.schema-generation.create-source" value="metadata-then-script"/>
-           <!-- <property name="javax.persistence.schema-generation.drop-source" value="metadata"/>-->
             <property name="javax.persistence.sql-load-script-source" value="META-INF/dump.sql"/>
             <property name="eclipselink.logging.level" value="FINE"/>
 

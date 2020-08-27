@@ -20,8 +20,8 @@ public class OfficinaService {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response addOfficina(Officina officina){
         try {
-            officinaRepository.createOfficina(officina);
-            return Response.status(Response.Status.CREATED).build();
+            int id=officinaRepository.createOfficina(officina);
+            return Response.status(Response.Status.CREATED).entity(id).build();
         } catch (Exception e) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }

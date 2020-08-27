@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Entity(name = "officina_cliente")
 @Table(name = "officina_cliente")
 @NamedQueries( {
+        @NamedQuery(name = "OfficinaCliente.getOfficinaCliente" , query = "select oc from officina_cliente oc where oc.id_officina=:id_officina and oc.id_cliente=:id_cliente"),
         @NamedQuery(name = "OfficinaCliente.getAllClienteOfOfficina", query = "select c.id_cliente from officina_cliente c where c.id_officina=:id_officina"),
 })
 public class OfficinaClienteEntity {
