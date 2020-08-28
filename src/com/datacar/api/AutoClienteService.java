@@ -40,7 +40,8 @@ public class AutoClienteService {
             String cilindrata = autoCliente.getCilindrata();
             String motore = autoCliente.getMotore();
             String carburante = autoCliente.getCarburante();
-            AutoEntity autoEntity = autoRepository.getAutoByDesc(marca,modello,cilindrata,motore,carburante);
+            String cavalli = autoCliente.getCavalli();
+            AutoEntity autoEntity = autoRepository.getAutoByDesc(marca,modello,cilindrata,motore,carburante,cavalli);
             System.out.println(autoEntity.getMarca());
             autoClienteRepository.createAutoCliente(targa, clienteEntity, autoEntity);
             return Response.status(Response.Status.OK).build();

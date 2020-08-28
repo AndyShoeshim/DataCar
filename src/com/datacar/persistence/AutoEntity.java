@@ -11,7 +11,8 @@ import java.util.List;
 @Entity(name = "auto")
 @Table(name = "auto")
 @NamedQueries({
-        @NamedQuery(name = "Auto.getAutoByDesc" , query = "select a from auto a where a.marca=:marca and a.modello=:modello and a.cilindrata=:cilindrata and a.motore=:motore and a.carburante=:carburante"),
+        @NamedQuery(name = "Auto.getAutoByDesc" , query =
+                "select a from auto a where a.marca=:marca and a.modello=:modello and a.cilindrata=:cilindrata and a.motore=:motore and a.carburante=:carburante and a.cavalli=:cavalli"),
         @NamedQuery(name = "Auto.getAutoById", query = "select a from auto a where a.id=:id")
 }
 )

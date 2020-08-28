@@ -110,9 +110,10 @@ public class ClienteService {
     public Response deleteCliente(@PathParam("id_officina") int id_officina, @PathParam("cod_fiscale") String cod_fiscale){
         ClienteEntity clienteToDelete = clienteRepository.findClienteByCodFiscale(cod_fiscale);
         OfficinaEntity officinaEntity = officinaRepository.getOfficinaById(id_officina);
+        boolean resultFromAutoCliente = autoClienteRepository.deleteByCliente(clienteToDelete);
         boolean resultFromOfficinaCliente = officinaClienteRepository.deleteByCliente(officinaEntity,clienteToDelete);
         boolean resultFromCliente = clienteRepository.deleteClienteByCodFiscale(cod_fiscale);
-        if(resultFromCliente && resultFromOfficinaCliente)
+        if(resultFromAutoCliente && resultFromCliente && resultFromOfficinaCliente)
             return Response.status(Response.Status.ACCEPTED).build();
         else
             return Response.status(Response.Status.NOT_FOUND).build();

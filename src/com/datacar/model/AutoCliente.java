@@ -25,13 +25,16 @@ public class AutoCliente {
     @JsonbProperty
     String carburante;
 
+    @JsonbProperty
+    String cavalli;
+
 
 
     public AutoCliente(){
     }
 
 
-    public AutoCliente(String targa, String cod_fiscale, String marca, String modello, String motore, String cilindrata, String carburante) {
+    public AutoCliente(String targa, String cod_fiscale, String marca, String modello, String motore, String cilindrata, String carburante, String cavalli) {
         this.targa = targa;
         this.cod_fiscale = cod_fiscale;
         this.marca = marca;
@@ -39,6 +42,7 @@ public class AutoCliente {
         this.motore = motore;
         this.cilindrata = cilindrata;
         this.carburante = carburante;
+        this.cavalli = cavalli;
     }
 
 
@@ -99,4 +103,11 @@ public class AutoCliente {
         return targa;
     }
 
+    public void setCavalli(String cavalli) {
+        this.cavalli = cavalli;
+    }
+
+    public String getCavalli() {
+        return cavalli;
+    }
 }

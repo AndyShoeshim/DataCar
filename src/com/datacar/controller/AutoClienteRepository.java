@@ -42,4 +42,14 @@ public class AutoClienteRepository {
         return list_of_cliente_targhe;
     }
 
+    public boolean deleteByCliente(ClienteEntity clienteEntity){
+        try {
+            em.createNamedQuery("AutoCliente.deleteByCliente").setParameter("id_cliente", clienteEntity).executeUpdate();
+            em.flush();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
 }
