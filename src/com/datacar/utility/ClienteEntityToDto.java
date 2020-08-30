@@ -16,7 +16,7 @@ public class ClienteEntityToDto {
         String indirizzo = clienteEntity.getIndirizzo();
         String sesso = clienteEntity.getSesso();
         String cod_fiscale = clienteEntity.getCod_fiscale();
-        int telefono = clienteEntity.getTelefono();
+        long telefono = clienteEntity.getTelefono();
         String email;
         if(clienteEntity.getEmail()!=null)
             email = clienteEntity.getEmail();

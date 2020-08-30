@@ -1,8 +1,6 @@
 package com.datacar.persistence;
 
 
-import com.datacar.model.Cliente;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -40,7 +38,7 @@ public class ClienteEntity {
     private String cod_fiscale;
 
     @Column(nullable = false)
-    private int telefono;
+    private long telefono;
 
     @Column(nullable = true)
     String email;
@@ -54,7 +52,7 @@ public class ClienteEntity {
     public ClienteEntity(){
     }
 
-    public ClienteEntity(String nome, String cognome, String citta, String cap, String indirizzo, String sesso, String cod_fiscale, int telefono, String email) {
+    public ClienteEntity(String nome, String cognome, String citta, String cap, String indirizzo, String sesso, String cod_fiscale, long telefono, String email) {
         this.nome = nome;
         this.cognome = cognome;
         this.citta = citta;
@@ -130,11 +128,11 @@ public class ClienteEntity {
         this.cod_fiscale = cod_fiscale;
     }
 
-    public int getTelefono() {
+    public long getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(long telefono) {
         this.telefono = telefono;
     }
 

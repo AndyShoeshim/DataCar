@@ -35,6 +35,17 @@ public class LavoroRepository {
         return list_of_lavoro;
     }
 
+    public boolean updateLavoroStatus(int id_lavoro){
+        LavoroEntity lavoroEntity = em.find(LavoroEntity.class,id_lavoro);
+        if(!lavoroEntity.isEffettuato()){
+            lavoroEntity.setEffettuato(true);
+            em.merge(lavoroEntity);
+            em.flush();
+            return true;
+        } else
+            return false;
+    }
+
 
 
 }

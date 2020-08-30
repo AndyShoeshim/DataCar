@@ -29,7 +29,7 @@ public class Cliente {
     String cod_fiscale;
 
     @JsonbProperty
-    int telefono;
+    long telefono;
 
     @JsonbProperty
     String email;
@@ -41,7 +41,7 @@ public class Cliente {
 
     }
 
-    public Cliente(String nome, String cognome, String citta, String cap, String indirizzo, String sesso, String cod_fiscale, int telefono, String email, int targhe_associate) {
+    public Cliente(String nome, String cognome, String citta, String cap, String indirizzo, String sesso, String cod_fiscale, long telefono, String email, int targhe_associate) {
         this.nome = nome;
         this.cognome = cognome;
         this.citta = citta;
@@ -90,7 +90,7 @@ public class Cliente {
         return cod_fiscale;
     }
 
-    public int getTelefono() {
+    public long getTelefono() {
         return telefono;
     }
 

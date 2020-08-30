@@ -13,7 +13,7 @@ public class ClienteDtoToEntity {
         String indirizzo = cliente.getIndirizzo();
         String sesso = cliente.getSesso();
         String cod_fiscale = cliente.getCod_fiscale();
-        int telefono = cliente.getTelefono();
+        long telefono = cliente.getTelefono();
         String email = cliente.getEmail();
         return new ClienteEntity(nome,cognome,citta,cap,indirizzo,sesso,cod_fiscale,telefono,email);
     }

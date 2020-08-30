@@ -80,7 +80,21 @@ public class LavoroService {
             return Response.status(Response.Status.NOT_FOUND).build();
     }
 
+
+    @PUT
+    @Path("/{id_lavoro}")
+    public Response updateLavoroStatus(@PathParam("id_lavoro") int id_lavoro){
+        try {
+            boolean resultOfUpdate = lavoroRepository.updateLavoroStatus(id_lavoro);
+            if(resultOfUpdate)
+                return Response.status(Response.Status.OK).build();
+            else
+                return Response.status(Response.Status.CONFLICT).build();
+        } catch (Exception e){
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+    }
+
     //TODO select data in base a data del laovoro
-    // post per cambiare se effettuato o meno
     // select degli ultimi 10 lavori
 }

@@ -7,6 +7,9 @@ import java.sql.Date;
 public class Lavoro {
 
     @JsonbProperty
+    int id;
+
+    @JsonbProperty
     String targa;
 
     @JsonbProperty
@@ -51,5 +54,13 @@ public class Lavoro {
 
     public boolean isEffettuato() {
         return effettuato;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

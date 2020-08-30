@@ -16,7 +16,10 @@ public class LavoroEntityToDto {
         String targa = lavoroEntity.getTarga();
         String tipoLavoro = lavoroEntity.getId_tipo_lavoro().getCategoriaLavoro();
         String descLavoro = lavoroEntity.getId_desc_lavoro().getDescrizioneLavoro();
-        return new Lavoro(targa,tipoLavoro,descLavoro,lavoroEntity.getDataScandenza(),lavoroEntity.isEffettuato());
+        int id = lavoroEntity.getId();
+        Lavoro lavoro = new Lavoro(targa,tipoLavoro,descLavoro,lavoroEntity.getDataScandenza(),lavoroEntity.isEffettuato());
+        lavoro.setId(id);
+        return lavoro;
     }
 
     public static List<Lavoro> getLavoroDtoListFromLavoroEntity(List<LavoroEntity> lavoroEntities){
