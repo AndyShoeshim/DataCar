@@ -24,7 +24,8 @@ public class ClienteRepository {
     }
 
     public ClienteEntity findClienteByCodFiscale(String cod_fiscale){
-        List<ClienteEntity> clientFound = em.createNamedQuery("Cliente.findClienteByCodFiscale").setParameter("cod_fiscale", cod_fiscale).getResultList();
+        List<ClienteEntity> clientFound = em.createNamedQuery("Cliente.findClienteByCodFiscale")
+                .setParameter("cod_fiscale", cod_fiscale).getResultList();
         return clientFound.get(0);
     }
 

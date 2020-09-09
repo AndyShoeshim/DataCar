@@ -80,7 +80,6 @@ public class LavoroService {
             return Response.status(Response.Status.NOT_FOUND).build();
     }
 
-
     @PUT
     @Path("/{id_lavoro}")
     public Response updateLavoroStatus(@PathParam("id_lavoro") int id_lavoro){
@@ -95,6 +94,5 @@ public class LavoroService {
         }
     }
 
-    //TODO select data in base a data del laovoro
-    // select degli ultimi 10 lavori
+
 }
